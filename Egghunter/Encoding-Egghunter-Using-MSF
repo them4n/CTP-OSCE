@@ -7,6 +7,6 @@ cat egghunter.txt | xxd -r -p > egghunter.bin
 ------------
 Now, we need to use an encoder to ensure only ASCII printable characters are actually used. (for example)
 
-msfvenom -e x86/alpha_mixed bufferregister=eax -i egghunter.bin
+cat egghunter.bin | msfvenom -a x86 --platform windows -e x86/alpha_mixed BufferRegister=EAX -f c
 
 
